@@ -1,0 +1,42 @@
+
+
+
+
+public static int breakIntoThree(int arr[]){
+
+    if(arr.length==5){
+
+      return arr[1]+arr[3];
+    }
+    int firstMin=Integer.MAX_VALUE;
+    int secondMin=Integer.MAX_VALUE;
+    int firstIndex=1;
+    boolean secondIndex=true;
+
+    for(int i =1;i<arr.length-1;i++){
+
+      if(arr[i]<firstMin && secondIndex){
+
+        secondMin=firstMin;
+
+        firstMin=arr[i];
+
+        firstIndex=i;
+        secondIndex=false;
+      }
+
+      else if((arr[i]<secondMin) && (i!=firstIndex+1)){
+
+        secondMin=arr[i];
+        secondIndex=true;
+      }
+
+
+
+    }
+
+    return firstMin+secondMin;
+
+
+
+  }
